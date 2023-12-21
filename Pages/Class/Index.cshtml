@@ -1,0 +1,42 @@
+﻿@page
+@model easeas.Pages.Class.IndexModel
+@{
+}
+
+
+<br />
+<h2>List of Class</h2>
+<a class="btn btn-primary btn-sm" href="/Class/Create">Add Class</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Days</th>
+            <th>Time</th>
+            <th>Room</th>
+            <th>Semester</th>
+            <th>Year</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listClass)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.name</td>
+                <td>@item.hari</td>
+                <td>@item.jam</td>
+                <td>@item.ruangan</td>
+                <td>@item.semester</td>
+                <td>@item.tahunAjaran</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Class/View?id=@item.id">View</a>
+                    <a class="btn btn-primary btn-sm" href="/Class/Edit?id=@item.id">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/Class/Delete?id=@item.id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
